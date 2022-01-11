@@ -2376,6 +2376,27 @@ blockquote {
     margin-left: 20px;
     position: relative;
 }
+.list-3 li:before, .list-2 li:before {
+    font-family: "FontAwesome";
+    content: "\f00c";
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    top: -2px;
+    margin-left: -28px;
+}
+
+.list-4 li:before, .list-3 li:before, .list-2 li:before, .list-1 li:before {
+    margin: 0;
+    position: relative;
+    color: #66676b;
+    float: left;
+    margin-left: -20px;
+    display: block;
+}
+.section.gray {
+    background: #fbfbfb;
+}
 /*---------------------
   Contact
 -----------------------*/

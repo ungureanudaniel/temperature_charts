@@ -6,6 +6,7 @@ __pycache__
 # Env
 .env
 grafice_main/.env
+grafice_main/grafice_main/.env
 myvenv/
 venv/
 
