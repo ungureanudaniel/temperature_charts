@@ -1,0 +1,341 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<!-- Hero Section Begin -->
+  <div class="utf-video-container-block" data-background-image="{% static 'images/background-dincolo1.jpg' %}" style="position:absolute;width:100%;height:100%;">
+  <video loop="" autoplay="true" muted="">
+    <source src="{% static 'videos/grafice-bg.mp4' %}" type="video/mp4">
+  </video>
+  </div>
+  <section class="section head__slider">
+    <div class="head__item" style="height: 82px;"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="head_text">
+              <h3>Grafice de Temperatura Online</h3>
+              <span>In fiecare zi pierzi timp pretios completand tabele ambigue cu temperatura, pe hartie, cand ai putea completa rapid online si printa la nevoie. Incearca si tu!</span>
+              <span>Fa-ti un cont si devino modern!</span>
+  		  </div>
+          </div>
+        </div>
+        <!-- Sign In Section Begin -->
+
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-xl-6 offset-xl-3">
+            <div class="login mb-5">
+              <div class="welcome-text">
+                <h3>Bine ai revenit! Introdu datele de autentificare</h3>
+                <span>Nu ai un cont? <a href="{% url 'register' %}">Inregistreaza-te!</a></span>
+    		  </div>
+              <form method="POST" id="login-form">
+                {% csrf_token %}
+                <div class="utf-no-border">
+                  <input type="text" class="input-border" name="username" id="emailaddress" placeholder="Email Address" required="" autocomplete="off">
+                </div>
+                <div class="utf-no-border">
+                  <input type="password" class="input-border" name="password" id="password" placeholder="Password" required="" autocomplete="off" >
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <div class="utf-no-border">
+                {{ form.captcha }}
+                </div>
+                <button class="button full-width sliding_icon ripple-effect mt-2" type="submit">Log In <i class="fa fa-chevron-right"></i></button>
+              </form>
+
+              <!-- <div class="social-login"><span>Or Login in With</span></div> -->
+              <!-- <div class="social-login-buttons">
+                <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Facebook</button>
+          			<button class="google-login ripple-effect"><i class="icon-brand-google"></i> Google+</button>
+          			<button class="twitter-login ripple-effect"><i class="icon-brand-twitter"></i> Twitter</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- Sign In Section End -->
+
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="feat-jobs">
+              <ul class="feat-jobs-list">
+                <li> <a href="#" class="feat_jobs-grid">
+                  <div class="feat_jobs-box"> <i class="fa fa-pie-chart"></i>
+                    <p>Restaurante</p>
+                  </div>
+                  </a>
+                </li>
+                <li> <a href="#" class="feat_jobs-grid">
+                  <div class="feat_jobs-box"><i class="fa fa-tools"></i>
+                    <p>Cofetarii</p>
+                  </div>
+                  </a>
+                </li>
+                <li> <a href="#" class="feat_jobs-grid">
+                  <div class="feat_jobs-box"> <i class="fa fa-phone"></i>
+                    <p>Patiserii</p>
+                  </div>
+                  </a>
+                </li>
+                <li> <a href="#" class="feat_jobs-grid">
+                  <div class="feat_jobs-box"> <i class="fa fa-heartbeat"></i>
+                    <p>Farmacii</p>
+                  </div>
+                  </a>
+                </li>
+                <li> <a href="#" class="feat_jobs-grid">
+                  <div class="feat_jobs-box"> <i class="fa fa-palette"></i>
+                    <p>Medical</p>
+                  </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+</section>
+
+<!-- Hero Section End -->
+<!-- Categories Section Begin -->
+<!-- <section class="section mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="section_head mt-5 mb-4">
+            <span class="bg_text">Jobs Categories</span> -->
+      			<!-- <h3>Choose Your Sector</h3> -->
+      			<!-- <div class="section_title">Jobs Categories</div>
+      			<p class="section_text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+          </div>
+        </div>
+      {% for cat in jobs_cat %}
+        <div class="col-xl-3 col-md-6 col-lg-4">
+			    <a href="{% url 'category' cat.slug %}" class="cat-box photo-category-box small" data-background-image="dark" style="background-image: url('{{ cat.image.url }}');">
+			      <div class="job-count">10 Openings</div>
+			      <div class="cat-name">
+              <div class="cat-icon"> <img class="" src="{{ cat.icon.url }}"></img> </div>
+      				<h3 class=>{{ cat.name }}</h3>
+      				<span>2,612 Jobs</span>
+			      </div>
+			</a>
+		</div>
+    {% endfor %}
+		<div class="col-xl-12 utf-centered-button margin-top-10">
+			<a href="jobs-categorie-two.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-0">View All Categories <i class="icon-feather-chevron-right"></i></a>
+		</div>
+      </div>
+    </div>
+  </section> -->
+<!-- Categories End -->
+<!-- Featured Jobs Start -->
+<!-- <section class="section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="section_head mt-5 mb-4">
+          <span class="bg_text">Featured Jobs</span> -->
+          <!-- <h3>Click Browse to see details</h3> -->
+          <!-- <div class="section_title">Jobs Categories</div>
+          <p class="section_text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+        </div>
+      </div>
+                <div class="col-lg-12 col-md-12">
+                  {% for job in featured_jobs %}
+                  <div class="job__item mt-5">
+                    <a href="{% url 'job_details' job.pk %}" class="job__item__link">
+                      <div class="job__details">
+        				            <div class="job__item__logo"> <img src="{{ job.logo.url }}" alt=""> </div>
+        				            <div class="job__description">
+                              <span class="job__type"><i class="fa fa-suitcase"></i> Full Time</span>
+                                <h3 class="job__title">{{ job.title }}</h3>
+                              <div class="job__footer">
+                                <ul>
+                      						<li><i class="fa fa-suitecase briefcase-icon"></i> {{ job.category }}</li>
+                      						<li><i class="fa fa-money-check-alt"></i> {{ job.from_wage_hour }} - {{ job.to_wage_hour }} EUR</li>
+                      						<li><i class="fas fa-map-signs"></i> {{ job.locality }}, {{ job.country }}</li>
+                      						<li><i class="fa fa-clock-o"></i> {{ job.get_time_diff }} Hours Ago</li>
+        					              </ul>
+        					            </div> -->
+                              <!-- <div class="job__social">
+                                <ul>
+                      						<li><a><i class="fab fa-facebook"></i></a></li>
+                      						<li><a><i class="fab fa-twitter"></i></a></li>
+                                  <li><a><i class="fab fa-insta"></i></a></li>
+        					              </ul>
+        					            </div> -->
+        				            <!-- </div>
+                            <span class="job_browse_btn">Browse Job <i class="fa fa-bullhorn"></i></span>
+        				      </div>
+                    </a>
+        		  </div> -->
+                    <!-- <div class="job__item">
+                      <div class="job__description">
+                        <div class="job__item__pic">
+                            <div class="post__meta">
+                                <img class="text-warning" src="{{ job.logo.url }}">
+                            </div>
+                        </div>
+                        <div class="job__item__text text-left">
+                            <div class="job__label--large">
+                              <span class="job__item__status"><i class="fa fa-suitcase"></i> Full Time</span>
+                              <h3 class="job__item__title"><a class="" href="{% url 'job_details' job.pk %}">{{ job.title }}</a></h3>
+                            </div>
+                            <ul class="post__widget">
+                                <li><span>{{ job.company }}</span></li>
+                                <li><span><i class="fas fa-money-check-alt"> {{ job.from_wage_hour }} - {{ job.to_wage_hour }} Euros / per Hour</i></span></li>
+                                <li><a style="color: black; href="{% url 'category' job.category.slug %}">{{ job.category }}</a></li>
+                                <li><a href="#"><i class="fa fa-comment text-dark"> {{ job.location }}</i></a></li>
+                                <li><a href="#"><i class="fa fa-clock-o text-danger">{{ job.get_time_diff }} ago</i></a></li>
+                                <li><a href="#"><i class="fa fa-trash text-danger"></i></a></li>
+
+                            </ul>
+
+                            <div class="post__social">
+                                <span>Share</span>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-envelope-o"></i></a>
+                            </div>
+                        </div>
+                        <div class="job__item__btn">
+                          <a href="{% url 'job_details' job.pk %}" class="primary-btn">Browse Job</a>
+                        </div>
+                    </div>
+                  </div> -->
+                    <!-- {% endfor %}
+                </div>
+                <div class="all_jobs_btn">
+                  <a href="#" class="primary-btn">See all Jobs</a>
+                </div>
+            </div>
+        </div
+</section> -->
+<!-- Section Jobs End -->
+<!-- Section Guide Start-->
+<!-- <section class="section pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="section_head mt-5 mb-4">
+            <span class="bg_text">Guide</span> -->
+            <!-- <h3 class="section_title">Guide</h3> -->
+<!--            <div class="section_title">How it works</div>
+            <p class="section_text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+          </div>
+        </div>
+		    <div class="col-xl-3 col-md-6 col-sm-12">
+          <div class="guide-box">
+            <div class="guide-circle">
+              <div class="guide-inner"> <i class="fa fa-key"></i></div>
+            </div>
+            <h3>User Register</h3>
+            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+		    <div class="col-xl-3 col-md-6 col-sm-12">
+          <div class="guide-box">
+            <div class="guide-circle">
+              <div class="guide-inner"> <i class="fa fa-user"></i></div>
+            </div>
+            <h3>Create Account</h3>
+            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+		    <div class="col-xl-3 col-md-6 col-sm-12">
+          <div class="guide-box">
+            <div class="guide-circle">
+              <div class="guide-inner"> <i class="fa fa-edit"></i></div>
+            </div>
+            <h3>Search Jobs</h3>
+            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+		    <div class="col-xl-3 col-md-6 col-sm-12">
+          <div class="guide-box">
+            <div class="guide-circle">
+              <div class="guide-inner"> <i class="fa fa-save"></i></div>
+            </div>
+            <h3>Save &amp; Apply</h3>
+            <p>Lorem Ipsum is simply dummy text the printing and type setting industry Lorem Ipsum has been industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section> -->
+  <!-- Testimonials SEction -->
+<!-- <section class="section pt-5 pb-5">
+    <div class="container ">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="section_head testim_slider mt-0 mb-4">
+            <span class="bg_text">Clients Say About Us</span> -->
+			      <!-- <h3>Our Customers Say</h3> -->
+			      <!-- <div class="section_title">Clients Say About Us</div>
+			      <p class="section_text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- Testimonials Carousel -->
+
+    <!-- <div class="slider-wrapper">
+      <div class="slider"> -->
+        <!-- {% for rev in reviews %}
+        <div class="slider-items">
+          <div class="slider-text">
+            <i class="fa fa-quote-right"></i>
+            <p>{{ rev.text|striptags }}</p>
+          </div>
+          <div class="slider-image">
+            <img src="https://randomuser.me/api/portraits/women/48.jpg" alt="">
+            <h4>{{ rev.name }}</h4>
+          </div>
+        </div>
+        {% endfor %} -->
+
+      <!-- </div>
+    </div>
+</section> -->
+<!-- Blog posts Section -->
+<!-- <section class="section pt-5 pb-5">
+  <div class="container ">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="section_head testim_slider mt-0 mb-4">
+          <span class="bg_text">Our Blog Articles</span> -->
+          <!-- <h3>Our Blog Articles</h3> -->
+<!--          <div class="section_title">Latest Blog Posts</div>
+          <p class="section_text">Lorem Ipsum is simply dummy text printing and type setting industry Lorem Ipsum been industry standard dummy text ever since when unknown printer took a galley.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- Testimonials Carousel -->
+
+  <!-- <div class="slider-wrapper">
+    <div class="slider blog"> -->
+      <!-- -------------- -->
+      <!-- {% for post in posts %}
+      <div class="slider-items blog-item">
+        <div class="slider-text">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.text|striptags|truncatechars:50 }}</p>
+          <p>by {{ post.author }}
+        </div>
+      </div>
+      {% endfor %} -->
+
+      <!-- -------------- -->
+
+    <!-- </div>
+  </div>
+</section> -->
+<!-- Categories Section End -->
+<!-- {% endblock %} -->

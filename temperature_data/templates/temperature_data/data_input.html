@@ -1,0 +1,102 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Dashboard Container -->
+<div class="dashboard-container" style="height: 713px;">
+    <!-- Dashboard Sidebar -->
+    <div class="dashboard-sidebar-item">
+      <div class="dashboard-sidebar-item-inner" data-simplebar="init" style="height: 713px;">
+        <div class="simplebar-track vertical" style="visibility: visible; display: none;">
+          <div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 25px;">
+          </div>
+        </div>
+        <div class="simplebar-track horizontal" style="visibility: visible; display: none;">
+          <div class="simplebar-scrollbar" style="visibility: visible; left: 0px; width: 25px;"></div>
+        </div>
+        <div class="simplebar-scroll-content" style="padding-right: 15px; margin-bottom: -30px;">
+          <div class="simplebar-content" style="padding-bottom: 15px; margin-right: -15px;">
+        <div class="dashboard-nav">
+          <!-- Responsive Navigation Trigger -->
+          <a href="#" class="dashboard-responsive-trigger-item {
+    display: none;}"> <span class="hamburger utf-hamburger-collapse-item"> <span class="utf-hamburger-box-item"> <span class="utf-hamburger-inner-item"></span> </span> </span> <span class="trigger-title">Dashboard Navigation Menu</span> </a>
+          <!-- Navigation -->
+		  <div class="dashboard-nav">
+			<div class="dashboard-nav-inner">
+			  <div class="dashboard-profile-box">
+				  <span class="avatar-img">
+					<img alt="" src="images/user-avatar-placeholder.png" class="photo">
+				  </span>
+				  <div class="user-profile-text">
+					<span class="fullname">{{ user.first_name }} {{ user.last_name }}</span>
+					<span class="user-role">Software Engineer</span>
+				  </div>
+			  </div>
+			  <div class="clearfix"></div>
+              <ul>
+                <li class="active"><a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        				<li><a href="{% url 'date_temperatura' %}"><i class="fa fa-area-chart"></i> Introdu date temperatura</a></li>
+                <li><a href="#"><i class="fa fa-user-circle"></i> Profil</a></li>
+                <li><a href="{% url 'logout' %}"><i class="fa fa-power-off"></i> Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div></div></div>
+    </div>
+    <!-- Dashboard Sidebar / End -->
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-content-container" data-simplebar="init" style="height: 713px;"><div class="simplebar-track vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 186px;"></div></div><div class="simplebar-track horizontal" style="visibility: visible;"><div class="simplebar-scrollbar" style="visibility: visible; left: 0px; width: 25px;"></div></div><div class="simplebar-scroll-content" style="padding-right: 15px; margin-bottom: -30px;"><div class="simplebar-content" style="padding-bottom: 15px; margin-right: -15px;">
+	  <div id="dashboard-titlebar" class="dashboard-headline-item">
+		<div class="row">
+			<div class="col-xl-12">
+				<h3>Dashboard</h3>
+				<nav id="breadcrumbs">
+					<ul>
+					  <li><a href="{% url 'login' %}">Home</a></li>
+					  <li>Dashboard</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 offset-xl-3">
+            <div class="register mt-5">
+              <div class="welcome-text">
+                <h3>Introdu mai jos temperatura!</h3>
+                <span>Selecteaza aparatul si data </span>
+    		  </div>
+              <form method="POST" id="register-account-form">
+                {% csrf_token %}
+                <!-- <div class="utf-no-border">
+                  <input type="text" class="utf-with-border" name="device" placeholder="Alege aparat" required="">
+                </div>
+                <div class="utf-no-border">
+                  <input type="text" class="utf-with-border" name="temp" placeholder="Email Address" required="">
+                </div>
+                <div class="utf-no-border mb-5">
+                  <input type="text" class="utf-with-border" name="date" placeholder="Alege data" required="">
+    		        </div>
+                <div class="utf-no-border">
+                  <input type="text" class="utf-with-border" name="hour" placeholder="Alege ora" required=""></div> -->
+                {{ form.as_p }}
+              </form>
+              <button class="button full-width utf-button-sliding-icon ripple-effect mt-2" type="submit">Salveaza <i class="fa fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+        <div class="dashboard-footer" style="padding-top: 123px;"></div>
+        <div class="small-footer margin-top-15">
+          <div class="small-footer-copyrights">Copyright © 2021 All Rights Reserved.</div>
+        </div>
+      </div>
+    </div></div></div>
+	<!-- Dashboard Content End -->
+  </div>
+  {% endblock %}
