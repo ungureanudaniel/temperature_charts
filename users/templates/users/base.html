@@ -19,8 +19,8 @@
             <nav id="navigation">
               <ul id="responsive">
                 <li><a href="{% url 'login' %}" class="current">Acasa</a></li>
-                <li><a href="#">Despre</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'about' %}">Despre</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'account' %}">Contul meu</a></li>
                 <li><a href="{% url 'date_temperatura' %}">Introdu date</a></li>

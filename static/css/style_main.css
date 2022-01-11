@@ -2055,7 +2055,7 @@ a:not([href]):not([tabindex]) {
     margin-top: 6px;
     line-height: 22px;
 }
-input.input-border, input[type="text"].utf-with-border, input[type="password"].utf-with-border, input[type="email"].utf-with-border, input[type="number"].utf-with-border, textarea.utf-with-border, select.utf-with-border {
+input.input-border, input[type="text"].with-border, input[type="password"].with-border, input[type="email"].with-border, input[type="number"].with-border, textarea.with-border, select.with-border {
   background: #fbfdff;
   border: 1px solid #dde6ef;
   box-shadow: 0 1px 4px 0px rgb(0 0 0 / 5%);
@@ -2345,100 +2345,91 @@ input[type="radio"], input[type="checkbox"] {
 .about__right__text .about__right__text__social a:last-child {
 	margin-right: 0;
 }
+/*--------------------
+      About
+---------------------*/
+blockquote {
+    padding: 20px 25px;
+    margin: 0;
+    font-size: 17px;
+    line-height: 30px;
+    color: #626262;
+    border-left: 5px solid #ff8a00;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+.list-3, .list-2, .list-1 {
+    padding: 3px 0 0 0;
+    font-size: 16px;
+}
+.list-3 li:first-child, .list-2 li:first-child, .list-1 li:first-child {
+    margin-top: 0;
+}
+.list-2 li, .list-2 li {
+    margin-left: 28px;
+}
 
+.list-3 li, .list-2 li, .list-1 li {
+    list-style: none;
+    margin: 10px 0;
+    line-height: 27px;
+    margin-left: 20px;
+    position: relative;
+}
 /*---------------------
   Contact
 -----------------------*/
 
-.contact {
-	padding-top: 0;
+.contact-location {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 3%);
+}
+.contact-location .contact-address, .contact-location #map-container {
+    flex: 1;
 }
 
-.contact__text {
-	padding-top: 30px;
-	border-top: 1px solid #ebebeb;
+#map-container {
+    position: relative;
 }
-
-.contact__map {
-	height: 350px;
-	-webkit-box-shadow: 0px 5px 5px rgba(20, 14, 5, 0.1);
-	box-shadow: 0px 5px 5px rgba(20, 14, 5, 0.1);
-	margin-bottom: 30px;
+.boxed-list-headline-item {
+    background-color: #424242;
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
 }
-
-.contact__map iframe {
-	width: 100%;
+.boxed-list-headline-item h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 0;
+    font-weight: 600;
 }
-
-.contact__widget ul li {
-	list-style: none;
-	margin-bottom: 20px;
+.boxed-list-headline-item h3 i {
+    background: #fff;
+    color: #424242 !important;
+    font-size: 18px;
+    margin-right: 10px;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50px;
+    vertical-align: middle;
+    padding: 5px;
 }
-
-.contact__widget ul li i {
-	height: 50px;
-	width: 50px;
-	border: 1px solid #e1e1e1;
-	font-size: 18px;
-	color: #f4952f;
-	line-height: 50px;
-	text-align: center;
-	display: inline-block;
-	margin-right: 16px;
+.contact-form {
+    margin-bottom: 20px;
+    display: block;
+    background: #fbfdff;
+    padding: 20px 20px 5px 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px 0px rgb(0 0 0 / 12%);
 }
-
-.contact__widget ul li span {
-	display: inline-block;
-	font-size: 14px;
-	color: #444444;
-}
-
-.contact__form .contact__form__title h2 {
-	text-transform: uppercase;
-	margin-bottom: 18px;
-}
-
-.contact__form .contact__form__title p {
-	font-size: 15px;
-	margin-bottom: 20px;
-}
-
-.contact__form form input {
-	height: 46px;
-	width: 100%;
-	background: transparent;
-	border: 1px solid #e1e1e1;
-	font-size: 14px;
-	color: #444444;
-	padding-left: 20px;
-	margin-bottom: 20px;
-}
-
-.contact__form form input:last-child {
-	color: #444444;
-}
-
-.contact__form form textarea {
-	height: 180px;
-	width: 100%;
-	background: transparent;
-	border: 1px solid #e1e1e1;
-	font-size: 14px;
-	color: #444444;
-	padding-top: 12px;
-	padding-left: 20px;
-	margin-bottom: 14px;
-	resize: none;
-}
-
-.contact__form form textarea:last-child {
-	color: #444444;
-}
-
-.contact__form form button {
-	width: 100%;
-}
-
 /*---------------------
   Sign In
 -----------------------*/

@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_protect
-# from .forms import CaptchaForm
+from .forms import CaptchaForm
 #-------------------------------LOGIN VIEW-----------------------------------
 # @csrf_protect
 def user_login(request):
@@ -106,15 +106,7 @@ def contact(request):
 #--------------------------ABOUT VIEW -----------------------------------------
 def about(request):
     template_name = 'users/about.html'
-    #--------------logo------------------------------
-    # logos = Logo.objects.filter(status='active')
-
-    # form = AboutForm(request.POST or None)
-    # categories = Category.objects.all()
+    
     context = {
-        # 'logos': logos,
-        # 'form': form,
-        # 'categories': categories,
-        'about_list': about_list,
     }
     return render(request, template_name, context)
