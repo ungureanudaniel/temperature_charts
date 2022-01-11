@@ -169,4 +169,3 @@ except Exception as e:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 CRISPY_TEMPLATE_PACK = 'uni_form'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-DJANGO_DEV = True
