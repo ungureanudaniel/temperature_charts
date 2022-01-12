@@ -13,7 +13,7 @@ class DataInput(models.Model):
     date = models.DateTimeField(default=datetime.datetime.now)
     time = models.TimeField()
     devices = models.CharField(max_length=255)
-    temp = models.DecimalField(max_digits = 5, decimal_places = 2)
+    temp = models.IntegerField()
 
     def get_absolute_url(self):
         return "/data_input/{}".format(self.slug)
