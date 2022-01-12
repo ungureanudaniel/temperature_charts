@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Device
-#, DataInput
+from .models import Device, DataInput
 
 class DeviceAdmin(admin.ModelAdmin):
     list_display = ('name',)
