@@ -6,14 +6,18 @@ from .models import DataInput
 
 def data_input(request):
     # -------------------------------DATA INPUT VIEW----------------------------
-    form = AddNewRecordForm(request.POST, request.FILES or None)
-    if request.method=="POST":
 
+    if request.method=="POST":
+        form = AddNewRecordForm(request.POST, request.FILES or None)
         if form.is_valid():
             try:
-                data = form.cleaned_data
-                data_inpt = DataInput.objects.create(**data, user=request.user)
-                # form.save()
+                temper = form.cleaned_data['temp']
+                device = form.cleaned_data['devices']
+                date1 = form.cleaned_data['date']
+                time1 = form.cleaned_data['time']
+
+                data_inpt = DataInput(user=request.user, temp=temper, devices = device, date = date1, time = time1)
+                data_inpt.save()
                 messages.success(request, _('Succes!'))
                 return redirect("/date_temperatura")
 

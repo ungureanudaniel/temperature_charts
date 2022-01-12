@@ -43,8 +43,7 @@ def register(request):
         password1 = request.POST['password1']
         password2 = request.POST['password2']
         phone = request.POST['phone']
-        gender = request.POST['gender']
-        image = request.FILES['image']
+        company = request.POST['company']
 
         if password1 != password2:
             messages.error(request, "Passwords do not match.")
