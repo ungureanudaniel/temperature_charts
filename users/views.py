@@ -5,6 +5,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_protect
 from .forms import CaptchaForm
+import numpy as np
+import matplotlib.pyplot as plt
+# import mysql.connector
 #-------------------------------LOGIN VIEW-----------------------------------
 # @csrf_protect
 def user_login(request):
@@ -56,8 +59,18 @@ def register(request):
 
 @login_required
 def account(request):
+    # mydb=mysql.connector.connect(host="localhost",user="root",password="password",database="database_name")
+    # mycursor=mydb.cursor()
+    # mycursor.execute("select Name, Marks from student_marks")
+    # result = mycursor.fetchall
+    #
+    # Names = []
+    # Marks = []
+    #
+    # for i in mycursor:
+    #     Names.append(i[0])
+    #     Marks.append(i[1])
     context = {
-        'account_page': "active",
     }
     return render(request, 'users/account.html', context)
 
@@ -106,7 +119,7 @@ def contact(request):
 #--------------------------ABOUT VIEW -----------------------------------------
 def about(request):
     template_name = 'users/about.html'
-    
+
     context = {
     }
     return render(request, template_name, context)

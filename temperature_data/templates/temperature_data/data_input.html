@@ -51,11 +51,11 @@
 	  <div id="dashboard-titlebar" class="dashboard-headline-item">
 		<div class="row">
 			<div class="col-xl-12">
-				<h3>Dashboard</h3>
+				<h3>Introducere date</h3>
 				<nav id="breadcrumbs">
 					<ul>
-					  <li><a href="{% url 'login' %}">Home</a></li>
-					  <li>Dashboard</li>
+					  <li><a href="{% url 'login' %}">Acasa</a></li>
+					  <li>Introducere date</li>
 					</ul>
 				</nav>
 			</div>
@@ -66,6 +66,13 @@
           <div class="col-xl-6 offset-xl-3">
             <div class="register mt-5">
               <div class="welcome-text">
+                {% if messages %}
+                  {% for message in messages %}
+                  <div class="alert {% if message.tags %} {{ message.tags }} {% endif %} alert-dismissible fade show"><button type="button" class="close" data-bs-dismiss="alert"  aria-hidden="false">&times;</button>
+                    {{ message }}
+                  </div>
+                  {% endfor %}
+                {% endif %}
                 <h3>Introdu mai jos temperatura!</h3>
                 <span>Selecteaza aparatul si data </span>
     		  </div>
@@ -83,8 +90,9 @@
                 <div class="utf-no-border">
                   <input type="text" class="utf-with-border" name="hour" placeholder="Alege ora" required=""></div> -->
                 {{ form.as_p }}
+                  <button class="button full-width utf-button-sliding-icon ripple-effect mt-2" type="submit">Salveaza <i class="fa fa-chevron-right"></i></button>
               </form>
-              <button class="button full-width utf-button-sliding-icon ripple-effect mt-2" type="submit">Salveaza <i class="fa fa-chevron-right"></i></button>
+
             </div>
           </div>
         </div>

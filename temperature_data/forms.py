@@ -15,6 +15,7 @@ class AddNewRecordForm(forms.ModelForm):
     class Meta:
         model = DataInput
         fields = ['devices', 'temp', 'date', 'time']
+        exclude = ['user']
         widgets = {
             'temp': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Introdu temperatura...'}),
             'date': forms.DateInput(attrs={'type': 'date'}),
